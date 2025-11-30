@@ -45,17 +45,17 @@ export interface Video {
 }
 
 export interface ExtractedContent {
-  title: string;
+  title?: string;
   excerpt?: string;
   content?: string;
   featuredImage?: string;
   thumbnailUrl?: string;
   publicationDate?: string;
   author?: string;
-  source: string;
-  originalUrl: string;
+  source?: string;
+  originalUrl?: string;
   summaryBullets?: string[];
-  tags: string[];
+  tags?: string[];
   audioUrl?: string;
   audioLength?: number;
   readingTime?: number;
