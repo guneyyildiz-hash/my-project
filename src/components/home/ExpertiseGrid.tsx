@@ -3,28 +3,28 @@ import Container from '@/components/layout/Container';
 
 const expertiseAreas = [
   {
-    title: 'Turkey & Kurdish Politics',
-    description: 'Deep expertise in Turkish domestic politics, Kurdish issues, and PKK dynamics.',
-    icon: '🇹🇷',
-    href: '/expertise#turkey',
+    title: 'AI & Technology',
+    description: 'Leveraging artificial intelligence for political analysis, content generation, and research insights.',
+    icon: '🤖',
+    href: '/expertise#ai',
   },
   {
-    title: 'Gulf States & Energy',
-    description: 'Analysis of Saudi Arabia, UAE, Qatar relations and regional energy politics.',
+    title: 'Political & Economic Analysis',
+    description: 'Strategic assessment of geopolitical risks and economic trends for businesses and governments.',
+    icon: '📊',
+    href: '/expertise#analysis',
+  },
+  {
+    title: 'Turkey, Kurdish Affairs, Syria & Iraq',
+    description: 'Deep expertise in Turkish politics, Kurdish issues, and Levant regional dynamics.',
+    icon: '🇹🇷',
+    href: '/expertise#turkey-levant',
+  },
+  {
+    title: 'Gulf States, Energy & Trading',
+    description: 'Analysis of Saudi Arabia, UAE, Qatar relations, energy markets, and regional trade.',
     icon: '⚡',
     href: '/expertise#gulf',
-  },
-  {
-    title: 'Syria & Iraq',
-    description: 'Covering conflict, reconstruction, and the role of external powers.',
-    icon: '🌍',
-    href: '/expertise#levant',
-  },
-  {
-    title: 'Political Risk Analysis',
-    description: 'Strategic assessment of geopolitical risks for businesses and governments.',
-    icon: '📊',
-    href: '/expertise#risk',
   },
 ];
 
