@@ -1,66 +1,67 @@
-# Citation Extraction Tool
+# Guney Yildiz Portfolio
 
-This project provides a lightweight Python utility that can scan arbitrary text for
-citations, references, and quotations. For each artefact it captures the
-surrounding context and generates ready-to-use prompts that can be fed to an AI
-model to recover complete bibliographic information.
+A professional portfolio website for Guney Yildiz (journalist, political risk consultant, PhD candidate at Cambridge) featuring:
 
-## Features
+- **Public Website**: Showcase articles, videos, research, and expertise
+- **Admin Dashboard**: Paste URLs to auto-publish content in minutes
+- **AI Enhancement**: Auto-generate summaries, tags, and audio
+- **Smart Scraping**: Handle Forbes, BBC, YouTube, and paywalled content
 
-- Detects parenthetical citations such as `(Doe, 2020)` and numeric references
-  like `[1, 2]`.
-- Extracts quotations and preserves the sentence where they appear.
-- Generates structured prompts tailored for AI models to retrieve authoritative
-  references or identify quote sources.
-- Includes a simple command-line interface and composable Python API.
+## Tech Stack
 
-## Installation
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Database**: Supabase (PostgreSQL)
+- **Auth**: NextAuth.js
+- **Deployment**: Vercel
 
-The package follows a standard `src` layout. You can install it in editable mode
-within a virtual environment:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate
-pip install -e .
-```
-
-## Usage
-
-### Python API
-
-```python
-from citation_tool import analyze_text
-
-text = "According to recent studies (Doe, 2021), innovation is accelerating."
-result = analyze_text(text)
-
-for citation in result["citations"]:
-    print(citation.text, citation.context)
-
-for prompt in result["prompts"]:
-    print(prompt.prompt)
-```
-
-### Command Line Interface
-
-Analyse a text file and return a JSON payload with citations, quotations, and
-prompts:
+## Getting Started
 
 ```bash
-python -m citation_tool.cli path/to/document.txt
+npm install
+npm run dev
 ```
 
-Alternatively, read from standard input and emit a human-friendly summary:
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-```bash
-echo "According to (Doe, 2020) ..." | python -m citation_tool.cli --format text
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js App Router pages
+│   ├── (public)/           # Public site routes
+│   ├── admin/              # Admin dashboard routes
+│   └── api/                # API routes
+├── components/             # React components
+│   ├── ui/                 # Base UI components
+│   ├── layout/             # Layout components
+│   ├── article/            # Article components
+│   ├── video/              # Video components
+│   ├── forms/              # Form components
+│   ├── search/             # Search components
+│   ├── admin/              # Admin components
+│   └── home/               # Homepage components
+└── lib/                    # Utilities and helpers
+    ├── content-ingestion/  # Content extraction system
+    └── types.ts            # TypeScript types
 ```
 
-## Testing
+## Environment Variables
 
-Run the unit tests with:
+Create a `.env.local` file with:
 
-```bash
-pytest
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+
+# Auth
+NEXTAUTH_SECRET=your_nextauth_secret
+NEXTAUTH_URL=http://localhost:3000
+
+# APIs
+ANTHROPIC_API_KEY=your_anthropic_key
+ELEVENLABS_API_KEY=your_elevenlabs_key
+YOUTUBE_API_KEY=your_youtube_api_key
 ```
